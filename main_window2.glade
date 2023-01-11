@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkEntryCompletion" id="entrycompletion1"/>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="stock">gtk-copy</property>
+  </object>
+  <object class="GtkImage" id="image2">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="stock">gtk-copy</property>
+  </object>
+  <object class="GtkImage" id="image3">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="stock">gtk-copy</property>
+  </object>
+  <object class="GtkImage" id="image4">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="stock">gtk-copy</property>
+  </object>
+  <object class="GtkWindow" id="main_window">
+    <property name="width-request">318</property>
+    <property name="height-request">220</property>
+    <property name="can-focus">False</property>
+    <property name="resizable">False</property>
+    <property name="window-position">center-always</property>
+    <child>
+      <object class="GtkLayout">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="hexpand">True</property>
+        <property name="vexpand">True</property>
+        <child>
+          <object class="GtkButton" id="exit_button">
+            <property name="label">gtk-quit</property>
+            <property name="width-request">100</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="use-stock">True</property>
+            <property name="always-show-image">True</property>
+            <signal name="pressed" handler="on_destroy" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">162</property>
+            <property name="y">168</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="dec_entry">
+            <property name="width-request">100</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="is-focus">True</property>
+            <property name="secondary-icon-stock">gtk-yes</property>
+            <property name="placeholder-text" translatable="yes">12345...</property>
+            <property name="input-purpose">number</property>
+            <signal name="changed" handler="dec_entry_changed" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">96</property>
+            <property name="y">8</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="hex_entry">
+            <property name="width-request">100</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="secondary-icon-stock">gtk-yes</property>
+            <property name="placeholder-text" translatable="yes">FA480...</property>
+            <signal name="changed" handler="hex_entry_changed" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">96</property>
+            <property name="y">48</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="oct_entry">
+            <property name="width-request">100</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="secondary-icon-stock">gtk-yes</property>
+            <property name="placeholder-text" translatable="yes">76246...</property>
+            <signal name="changed" handler="oct_entry_changed" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">96</property>
+            <property name="y">88</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="bin_entry">
+            <property name="width-request">100</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="secondary-icon-stock">gtk-yes</property>
+            <property name="placeholder-text" translatable="yes">10011101...</property>
+            <signal name="changed" handler="bin_entry_changed" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">96</property>
+            <property name="y">128</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">80</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Dec</property>
+            <attributes>
+              <attribute name="font-desc" value="Lucida Console Semi-Condensed 13"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">8</property>
+            <property name="y">8</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">80</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Hex</property>
+            <attributes>
+              <attribute name="font-desc" value="Lucida Console Semi-Condensed 13"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">8</property>
+            <property name="y">48</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">80</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Oct</property>
+            <attributes>
+              <attribute name="font-desc" value="Lucida Console Semi-Condensed 13"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">8</property>
+            <property name="y">88</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">80</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label">Bin</property>
+            <attributes>
+              <attribute name="font-desc" value="Lucida Console Semi-Condensed 13"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">8</property>
+            <property name="y">128</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="copy_dec_button">
+            <property name="width-request">24</property>
+            <property name="height-request">22</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="image">image2</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="copy_dec_button_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">271</property>
+            <property name="y">8</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="copy_hex_button">
+            <property name="width-request">24</property>
+            <property name="height-request">22</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="image">image1</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="copy_hex_button_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">271</property>
+            <property name="y">48</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="copy_oct_button">
+            <property name="width-request">24</property>
+            <property name="height-request">22</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="image">image3</property>
+            <property name="always-show-image">True</property>
+            <signal name="clicked" handler="copy_oct_button_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">271</property>
+            <property name="y">88</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="copy_bin_button">
+            <property name="width-request">24</property>
+            <property name="height-request">22</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="image">image4</property>
+            <signal name="clicked" handler="copy_bin_button_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">271</property>
+            <property name="y">128</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

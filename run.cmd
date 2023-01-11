@@ -1,0 +1,1 @@
+"C:\Program Files\msys2\mingw64\bin\python.exe" main2.py
