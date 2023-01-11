@@ -47,6 +47,14 @@ class CApplication:
         self.oct_entry.set_icon_from_icon_name(ICON_POSITION, ICON_OK)
         self.bin_entry = self.builder.get_object("bin_entry")
         self.bin_entry.set_icon_from_icon_name(ICON_POSITION, ICON_OK)
+        self.copy_bin_button = self.builder.get_object("copy_bin_button")
+        self.copy_bin_button.set_sensitive(True)
+        self.copy_dec_button = self.builder.get_object("copy_dec_button")
+        self.copy_dec_button.set_sensitive(True)
+        self.copy_hex_button = self.builder.get_object("copy_hex_button")
+        self.copy_hex_button.set_sensitive(True)
+        self.copy_oct_button = self.builder.get_object("copy_oct_button")
+        self.copy_oct_button.set_sensitive(True)
         self.window.show_all()
 
     def bin_entry_changed(self, pwidget):
@@ -54,12 +62,15 @@ class CApplication:
         if check_entered_string(BINARY_CHARS, pwidget):
 
             pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_OK)
+            self.copy_bin_button.set_sensitive(True)
+
         else:
 
             self.dec_entry.set_text("")
             self.hex_entry.set_text("")
             self.oct_entry.set_text("")
             pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_ERROR )
+            self.copy_bin_button.set_sensitive(False)
 
     def copy_bin_button_clicked(self, pwidget):
         """Обработчик нажатия кнопки копирования в буфер двоичного значения."""
@@ -85,36 +96,42 @@ class CApplication:
         if check_entered_string(DECIMAL_CHARS, pwidget):
 
             pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_OK)
+            self.copy_dec_button.set_sensitive(True)
         else:
 
             self.hex_entry.set_text("")
             self.oct_entry.set_text("")
             self.bin_entry.set_text("")
             pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_ERROR)
+            self.copy_dec_button.set_sensitive(False)
 
     def hex_entry_changed(self, pwidget):
         """Обработчик ввода шестнадцатиричного числа."""
         if check_entered_string(HEXADECIMAL_CHARS, pwidget):
 
             pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_OK)
+            self.copy_hex_button.set_sensitive(True)
         else:
 
             self.dec_entry.set_text("")
             self.oct_entry.set_text("")
             self.bin_entry.set_text("")
             pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_ERROR)
+            self.copy_hex_button.set_sensitive(False)
 
     def oct_entry_changed(self, pwidget):
         """Обработчик ввода восьмеричного числа."""
         if check_entered_string(OCTAL_CHARS, pwidget):
 
             pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_OK)
+            self.copy_oct_button.set_sensitive(True)
         else:
 
             self.dec_entry.set_text("")
             self.hex_entry.set_text("")
             self.bin_entry.set_text("")
             pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_ERROR)
+            self.copy_oct_button.set_sensitive(False)
 
     def on_close(self, pwidget):
         """Обработчик нажатия кнопки 'Close'."""
