@@ -102,6 +102,23 @@ class CApplication:
 
             pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_OK)
             self.copy_dec_button.set_sensitive(True)
+
+            line: str = pwidget.get_text().strip()
+            # *** Что-то ввели?
+            if len(line) > 0:
+
+                # *** Приведем строку к инту и конвертим
+                value: int = int(line)
+                self.bin_entry.set_text(bin(value)[2:])
+                self.hex_entry.set_text(hex(value)[2:])
+                self.oct_entry.set_text(oct(value)[2:])
+
+            else:
+
+                self.hex_entry.set_text("")
+                self.oct_entry.set_text("")
+                self.bin_entry.set_text("")
+
         else:
 
             self.hex_entry.set_text("")
@@ -144,7 +161,7 @@ class CApplication:
         Gtk.main_quit()
 
     @staticmethod
-    def on_destroy(self, pwidget):
+    def on_destroy(self):
         """Обработчик нажатия кнопки закрытия программы."""
         Gtk.main_quit()
 
