@@ -29,6 +29,7 @@
     <property name="can-focus">False</property>
     <property name="resizable">False</property>
     <property name="window-position">center-always</property>
+    <signal name="delete-event" handler="on_delete" swapped="no"/>
     <child>
       <object class="GtkLayout">
         <property name="visible">True</property>
