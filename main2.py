@@ -67,14 +67,29 @@ class CApplication:
 
             pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_OK)
             self.copy_bin_button.set_sensitive(True)
+            line: str = pwidget.get_text().strip()
+            # *** Что-то ввели?
+            if len(line) > 0:
 
+                # *** Приведем строку к инту и конвертим
+                value: int = int(line, 2)
+                self.dec_entry.set_text(str(value))
+
+            else:
+
+                self.clear_entries()
         else:
 
-            self.dec_entry.set_text("")
-            self.hex_entry.set_text("")
-            self.oct_entry.set_text("")
             pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_ERROR )
             self.copy_bin_button.set_sensitive(False)
+
+    def clear_entries(self):
+        """Очищает все строки ввода."""
+
+        self.dec_entry.set_text("")
+        self.hex_entry.set_text("")
+        self.oct_entry.set_text("")
+        self.bin_entry.set_text("")
 
     def copy_bin_button_clicked(self, pwidget):
         """Обработчик нажатия кнопки копирования в буфер двоичного значения."""
@@ -121,11 +136,11 @@ class CApplication:
 
         else:
 
+            pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_ERROR)
+            self.copy_dec_button.set_sensitive(False)
             self.hex_entry.set_text("")
             self.oct_entry.set_text("")
             self.bin_entry.set_text("")
-            pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_ERROR)
-            self.copy_dec_button.set_sensitive(False)
 
     def hex_entry_changed(self, pwidget):
         """Обработчик ввода шестнадцатиричного числа."""
@@ -133,6 +148,16 @@ class CApplication:
 
             pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_OK)
             self.copy_hex_button.set_sensitive(True)
+            line: str = pwidget.get_text().strip()
+            # *** Что-то ввели?
+            if len(line) > 0:
+
+                # *** Приведем строку к инту и конвертим
+                value: int = int(line, 16)
+                self.dec_entry.set_text(str(value))
+            else:
+
+                self.clear_entries()
         else:
 
             self.dec_entry.set_text("")
@@ -147,6 +172,16 @@ class CApplication:
 
             pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_OK)
             self.copy_oct_button.set_sensitive(True)
+            line: str = pwidget.get_text().strip()
+            # *** Что-то ввели?
+            if len(line) > 0:
+
+                # *** Приведем строку к инту и конвертим
+                value: int = int(line, 8)
+                self.dec_entry.set_text(str(value))
+            else:
+
+                self.clear_entries()
         else:
 
             self.dec_entry.set_text("")
