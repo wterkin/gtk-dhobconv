@@ -71,17 +71,22 @@ class CApplication:
             # *** Что-то ввели?
             if len(line) > 0:
 
-                # *** Приведем строку к инту и конвертим
+                # *** Приведем строку к инт и конвертим
                 value: int = int(line, 2)
                 self.dec_entry.set_text(str(value))
 
             else:
 
-                self.clear_entries()
+                self.dec_entry.set_text("")
+                self.hex_entry.set_text("")
+                self.oct_entry.set_text("")
         else:
 
-            pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_ERROR )
+            pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_ERROR)
             self.copy_bin_button.set_sensitive(False)
+            self.dec_entry.set_text("")
+            self.hex_entry.set_text("")
+            self.oct_entry.set_text("")
 
     def clear_entries(self):
         """Очищает все строки ввода."""
@@ -122,7 +127,7 @@ class CApplication:
             # *** Что-то ввели?
             if len(line) > 0:
 
-                # *** Приведем строку к инту и конвертим
+                # *** Приведем строку к инт и конвертим
                 value: int = int(line)
                 self.bin_entry.set_text(bin(value)[2:])
                 self.hex_entry.set_text(hex(value)[2:])
@@ -130,17 +135,16 @@ class CApplication:
 
             else:
 
+                self.bin_entry.set_text("")
                 self.hex_entry.set_text("")
                 self.oct_entry.set_text("")
-                self.bin_entry.set_text("")
-
         else:
 
             pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_ERROR)
             self.copy_dec_button.set_sensitive(False)
+            self.bin_entry.set_text("")
             self.hex_entry.set_text("")
             self.oct_entry.set_text("")
-            self.bin_entry.set_text("")
 
     def hex_entry_changed(self, pwidget):
         """Обработчик ввода шестнадцатиричного числа."""
@@ -152,19 +156,21 @@ class CApplication:
             # *** Что-то ввели?
             if len(line) > 0:
 
-                # *** Приведем строку к инту и конвертим
+                # *** Приведем строку к инт и конвертим
                 value: int = int(line, 16)
                 self.dec_entry.set_text(str(value))
             else:
 
-                self.clear_entries()
+                self.bin_entry.set_text("")
+                self.dec_entry.set_text("")
+                self.oct_entry.set_text("")
         else:
 
-            self.dec_entry.set_text("")
-            self.oct_entry.set_text("")
-            self.bin_entry.set_text("")
             pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_ERROR)
             self.copy_hex_button.set_sensitive(False)
+            self.bin_entry.set_text("")
+            self.dec_entry.set_text("")
+            self.oct_entry.set_text("")
 
     def oct_entry_changed(self, pwidget):
         """Обработчик ввода восьмеричного числа."""
@@ -176,24 +182,21 @@ class CApplication:
             # *** Что-то ввели?
             if len(line) > 0:
 
-                # *** Приведем строку к инту и конвертим
+                # *** Приведем строку к инт и конвертим
                 value: int = int(line, 8)
                 self.dec_entry.set_text(str(value))
             else:
 
-                self.clear_entries()
+                self.bin_entry.set_text("")
+                self.dec_entry.set_text("")
+                self.hex_entry.set_text("")
         else:
 
-            self.dec_entry.set_text("")
-            self.hex_entry.set_text("")
-            self.bin_entry.set_text("")
             pwidget.set_icon_from_icon_name(ICON_POSITION, ICON_ERROR)
             self.copy_oct_button.set_sensitive(False)
-
-    @staticmethod
-    def on_delete(self, pwidget):
-        """Обработчик нажатия кнопки 'Close'."""
-        Gtk.main_quit()
+            self.bin_entry.set_text("")
+            self.dec_entry.set_text("")
+            self.hex_entry.set_text("")
 
     @staticmethod
     def on_destroy(self):

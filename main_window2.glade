@@ -2,6 +2,7 @@
 <!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
+  <object class="GtkAction" id="action1"/>
   <object class="GtkEntryCompletion" id="entrycompletion1"/>
   <object class="GtkImage" id="image1">
     <property name="visible">True</property>
@@ -29,7 +30,6 @@
     <property name="can-focus">False</property>
     <property name="resizable">False</property>
     <property name="window-position">center-always</property>
-    <signal name="delete-event" handler="on_delete" swapped="no"/>
     <child>
       <object class="GtkLayout">
         <property name="visible">True</property>
@@ -46,7 +46,10 @@
             <property name="receives-default">True</property>
             <property name="use-stock">True</property>
             <property name="always-show-image">True</property>
+            <signal name="activate" handler="on_destroy" swapped="no"/>
+            <signal name="clicked" handler="on_destroy" swapped="no"/>
             <signal name="pressed" handler="on_destroy" swapped="no"/>
+            <accelerator key="q" signal="clicked" modifiers="GDK_CONTROL_MASK"/>
           </object>
           <packing>
             <property name="x">162</property>
